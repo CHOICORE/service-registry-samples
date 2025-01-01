@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.client.WebClient
 import java.io.IOException
 import java.security.GeneralSecurityException
-import java.time.Duration
 import java.time.LocalDateTime
 
 @SpringBootApplication
@@ -46,13 +45,13 @@ class EurekaConfiguration {
         private var lastRetrievedAt = LocalDateTime.now()
 
         override fun onEvent(event: EurekaEvent) {
-            val retrievedAt = LocalDateTime.now()
-            val duration = Duration.between(lastRetrievedAt, retrievedAt)
-            println("====================================================================================================")
-            println("Event: $event")
-            println("Duration: ${duration.toSeconds()} seconds")
-            println("====================================================================================================")
-            lastRetrievedAt = retrievedAt
+//            val retrievedAt = LocalDateTime.now()
+//            val duration = Duration.between(lastRetrievedAt, retrievedAt)
+//            println("====================================================================================================")
+//            println("Event: $event")
+//            println("Duration: ${duration.toSeconds()} seconds")
+//            println("====================================================================================================")
+//            lastRetrievedAt = retrievedAt
         }
     }
 }
