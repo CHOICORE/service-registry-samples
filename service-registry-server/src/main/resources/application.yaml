@@ -5,6 +5,12 @@ eureka:
   server:
     enable-self-preservation: false
     use-read-only-response-cache: false
+    ## 클라이언트가 하트비트를 보낼 것으로 예상되는 간격. 기본값은 30초입니다.
+    ## 클라이언트가 서로 다른 빈도(예: 15초마다)로 하트비트를 보내는 경우 이 매개 변수를 그에 맞게 조정해야 합니다.
+    ## 그렇지 않으면 자체 보존이 예상대로 작동하지 않습니다.
+    expected-client-renewal-interval-seconds: 10
+    eviction-interval-timer-in-ms: 10000
+
   client:
     register-with-eureka: false
     fetch-registry: false
